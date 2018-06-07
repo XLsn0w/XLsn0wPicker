@@ -15,17 +15,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class XLsn0wPickerSingler;
+@class XLsn0wPicker;
 
-@protocol  XLsn0wPickerSinglerDelegate<NSObject>
+typedef void(^XLsn0wPickerBlock)(XLsn0wPicker *picker, NSString *selectedTitle, NSInteger selectedRow);
 
-- (void)pickerSingler:(XLsn0wPickerSingler *)pickerSingler selectedTitle:(NSString *)selectedTitle selectedRow:(NSInteger)selectedRow;
+@interface XLsn0wPicker : UIButton
 
-@end
+@property(nonatomic, copy) XLsn0wPickerBlock pickerBlock;
 
-@interface XLsn0wPickerSingler : UIButton
-
-/** 2.工具器 */
 @property (nonatomic, strong, nullable) XLsn0wToolbar *toolbar;
 
 /** 1.设置字符串数据数组 */
@@ -35,11 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 3.标题 */
 @property (nonatomic, strong)NSString *title;
 
-@property(nonatomic, weak) id<XLsn0wPickerSinglerDelegate> xlsn0wDelegate;
-
-- (instancetype)initWithArrayData:(NSArray<NSString *>*)arrayData
-                        unitTitle:(NSString *)unitTitle
-                   xlsn0wDelegate:(nullable id<XLsn0wPickerSinglerDelegate>)xlsn0wDelegate;
+- (instancetype)initWithData:(NSArray<NSString *>*)data
+                   unitTitle:(NSString *)unitTitle;
 
 - (void)show;
 @end

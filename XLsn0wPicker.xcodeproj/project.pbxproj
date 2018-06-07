@@ -17,7 +17,7 @@
 		3514587020C96D600011F123 /* XLsn0wPickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514586F20C96D600011F123 /* XLsn0wPickerUITests.m */; };
 		3514588620C96D810011F123 /* XLsn0wDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514587F20C96D800011F123 /* XLsn0wDatePicker.m */; };
 		3514588720C96D810011F123 /* XLsn0wAddressPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514588220C96D810011F123 /* XLsn0wAddressPicker.m */; };
-		3514588820C96D810011F123 /* XLsn0wPickerSingler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514588420C96D810011F123 /* XLsn0wPickerSingler.m */; };
+		3514588820C96D810011F123 /* XLsn0wPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514588420C96D810011F123 /* XLsn0wPicker.m */; };
 		3514588C20C96D8B0011F123 /* XLsn0wToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514588A20C96D8A0011F123 /* XLsn0wToolbar.m */; };
 		3514588E20C96D970011F123 /* XLsn0wAddressPicker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3514588D20C96D960011F123 /* XLsn0wAddressPicker.plist */; };
 /* End PBXBuildFile section */
@@ -60,8 +60,8 @@
 		3514587F20C96D800011F123 /* XLsn0wDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wDatePicker.m; sourceTree = "<group>"; };
 		3514588120C96D810011F123 /* XLsn0wAddressPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wAddressPicker.h; sourceTree = "<group>"; };
 		3514588220C96D810011F123 /* XLsn0wAddressPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wAddressPicker.m; sourceTree = "<group>"; };
-		3514588420C96D810011F123 /* XLsn0wPickerSingler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wPickerSingler.m; sourceTree = "<group>"; };
-		3514588520C96D810011F123 /* XLsn0wPickerSingler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wPickerSingler.h; sourceTree = "<group>"; };
+		3514588420C96D810011F123 /* XLsn0wPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wPicker.m; sourceTree = "<group>"; };
+		3514588520C96D810011F123 /* XLsn0wPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wPicker.h; sourceTree = "<group>"; };
 		3514588A20C96D8A0011F123 /* XLsn0wToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wToolbar.m; sourceTree = "<group>"; };
 		3514588B20C96D8A0011F123 /* XLsn0wToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wToolbar.h; sourceTree = "<group>"; };
 		3514588D20C96D960011F123 /* XLsn0wAddressPicker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = XLsn0wAddressPicker.plist; sourceTree = "<group>"; };
@@ -96,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				3514588F20C970D50011F123 /* XLsn0wPickers */,
-				3514588320C96D810011F123 /* XLsn0wPickerSingler */,
 				3514584A20C96D5E0011F123 /* XLsn0wPicker */,
 				3514586320C96D600011F123 /* XLsn0wPickerTests */,
 				3514586E20C96D600011F123 /* XLsn0wPickerUITests */,
@@ -167,12 +166,13 @@
 			path = XLsn0wAddressPicker;
 			sourceTree = "<group>";
 		};
-		3514588320C96D810011F123 /* XLsn0wPickerSingler */ = {
+		3514588320C96D810011F123 /* XLsn0wPicker */ = {
 			isa = PBXGroup;
 			children = (
-				3514588520C96D810011F123 /* XLsn0wPickerSingler.h */,
-				3514588420C96D810011F123 /* XLsn0wPickerSingler.m */,
+				3514588520C96D810011F123 /* XLsn0wPicker.h */,
+				3514588420C96D810011F123 /* XLsn0wPicker.m */,
 			);
+			name = XLsn0wPicker;
 			path = XLsn0wPickerSingler;
 			sourceTree = "<group>";
 		};
@@ -188,8 +188,9 @@
 		3514588F20C970D50011F123 /* XLsn0wPickers */ = {
 			isa = PBXGroup;
 			children = (
-				3514588020C96D810011F123 /* XLsn0wAddressPicker */,
+				3514588320C96D810011F123 /* XLsn0wPicker */,
 				3514587D20C96D800011F123 /* XLsn0wDatePicker */,
+				3514588020C96D810011F123 /* XLsn0wAddressPicker */,
 				3514588920C96D8A0011F123 /* XLsn0wToolbar */,
 			);
 			path = XLsn0wPickers;
@@ -331,7 +332,7 @@
 				3514588720C96D810011F123 /* XLsn0wAddressPicker.m in Sources */,
 				3514588620C96D810011F123 /* XLsn0wDatePicker.m in Sources */,
 				3514585B20C96D600011F123 /* main.m in Sources */,
-				3514588820C96D810011F123 /* XLsn0wPickerSingler.m in Sources */,
+				3514588820C96D810011F123 /* XLsn0wPicker.m in Sources */,
 				3514584D20C96D5E0011F123 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

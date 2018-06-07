@@ -9,12 +9,12 @@
  *                                                                                           *
  *********************************************************************************************/
 
-#import "XLsn0wPickerSingler.h"
+#import "XLsn0wPicker.h"
 
 static CGFloat const PickerViewHeight = 240;
 static CGFloat const PickerViewLabelWeight = 200;
 
-@interface XLsn0wPickerSingler () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface XLsn0wPicker () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 /** 1.选择器 */
 @property (nonatomic, strong, nullable) UIPickerView *pickerView;
@@ -28,25 +28,21 @@ static CGFloat const PickerViewLabelWeight = 200;
 
 @end
 
-@implementation XLsn0wPickerSingler
+@implementation XLsn0wPicker
 
 #pragma mark - --- init 视图初始化 ---
 
-- (instancetype)initWithArrayData:(NSArray<NSString *>*)arrayData
-                        unitTitle:(NSString *)unitTitle
-                   xlsn0wDelegate:(nullable id<XLsn0wPickerSinglerDelegate>)xlsn0wDelegate {
-    self.arrayData = arrayData.mutableCopy;
+- (instancetype)initWithData:(NSArray<NSString *>*)data
+                        unitTitle:(NSString *)unitTitle {
+    self.arrayData = data.mutableCopy;
     self.unitTitle = unitTitle;
     
     self = [self init];
-    self.xlsn0wDelegate = xlsn0wDelegate;
     return self;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
+- (instancetype)init {
+    if (self = [super init]) {
         [self setupUI];
     }
     return self;
@@ -121,7 +117,9 @@ static CGFloat const PickerViewLabelWeight = 200;
 #pragma mark - --- event response 事件相应 ---
 
 - (void)selectedOk {
-    [self.xlsn0wDelegate pickerSingler:self selectedTitle:self.selectedTitle selectedRow:_selectedRow];
+    if (self.pickerBlock) {
+        self.pickerBlock(self, self.selectedTitle, self.selectedRow);
+    }
     [self remove];
 }
 
