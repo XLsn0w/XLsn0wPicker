@@ -117,6 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class XLsn0wDatePicker;
 
+/// __weak typeof(self) weakSelf = self;
 typedef void(^XLsn0wDatePickerBlock)(XLsn0wDatePicker *picker, NSInteger year, NSInteger month, NSInteger day);///推荐 !!! 注意weak self
 
 @protocol XLsn0wPickerTimerDelegate <NSObject>///不推荐

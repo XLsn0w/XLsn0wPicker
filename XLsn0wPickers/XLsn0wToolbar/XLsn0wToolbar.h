@@ -11,6 +11,11 @@
 
 #import <UIKit/UIKit.h>
 
+/// XLsn0wPicker Macro
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b) RGBA(r, g, b, 1.0f)
+#define XLsn0wPicker_WeakSelf __weak typeof(self) weakSelf = self;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XLsn0wToolbar : UIView
