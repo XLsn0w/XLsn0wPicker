@@ -47,10 +47,6 @@ UIKIT_EXTERN CGFloat const STControlNormalHeight;
  */
 #define RGB(r, g, b) RGBA(r, g, b, 1.0f)
 
-/**
- *  4.弱引用
- */
-#define STWeakSelf __weak typeof(self) weakSelf = self;
 
 NS_ASSUME_NONNULL_BEGIN
 
